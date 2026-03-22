@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: steelblue;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+            color: white;
+            font-weight: bold;
+        }
+        .changed {
+            background-color: tomato !important;
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Hello</div>
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="cssBtn">Change CSS</button>
+    <script>
+        $(document).ready(function(){
+
+            // Hide button
+            $("#hideBtn").click(function(){
+                $("#box").hide();
+            });
+
+            // Show button
+            $("#showBtn").click(function(){
+                $("#box").show();
+            });
+            $("#cssBtn").click(function(){
+                $("#box").toggleClass("changed");
+            });
+
+        });
+    </script>
+
+</body>
+</html>
