@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("#box");
+
+    div.animate({top: '400px', left: '0px', width: '130px', height: '130px'}, "10000", function(){
+      div.find("span").css("font-size", "20px");
+    });
+
+    div.animate({top: '400px', left: '300px', width: '80px', height: '80px', opacity: '0.4'}, "10000", function(){
+      div.css("background", "#e05a2b");
+      div.find("span").css("font-size", "12px");
+    });
+
+    div.animate({top: '120px', left: '300px', width: '120px', height: '120px', opacity: '1'}, "10000", function(){
+      div.find("span").css("font-size", "30px");
+    });
+
+    div.animate({top: '120px', left: '0px', width: '100px', height: '100px'}, "10000", function(){
+      div.css("background", "#7300ff");
+      div.find("span").css("font-size", "14px");
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p>SQUARE ANIMATION</p>
+
+<div id="box" style="background:#7300ff; height:100px; width:100px; position:absolute; top:120px; left:0px; display:flex; align-items:center; justify-content:center;">
+  <span style="font-size:14px; color:#fff; font-weight:bold;">Hello</span>
+</div>
+
+</body>
+</html>
