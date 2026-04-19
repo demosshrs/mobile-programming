@@ -1,8 +1,6 @@
-// Import Firebase SDK (same version used in the firebase folder)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-database.js";
 
-// Firebase configuration (same project as firebase/main.js)
 const firebaseConfig = {
   apiKey: "AIzaSyBbJsUUrXWgbizflKkfWeSgrs8GeRxjxgk",
   authDomain: "mobile-programming-ed154.firebaseapp.com",
@@ -13,11 +11,9 @@ const firebaseConfig = {
   appId: "1:524985634079:web:c05d9f67d13567448ef42a"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// Handle form submission
 const form = document.getElementById("contact-form");
 const status = document.getElementById("status");
 
@@ -28,10 +24,8 @@ form.addEventListener("submit", (e) => {
   const email   = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // Create a new unique reference under 'contact-messages'
   const messagesRef = ref(db, "contact-messages");
   const newMessageRef = push(messagesRef);
-
   set(newMessageRef, {
     name: name,
     email: email,
